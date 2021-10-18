@@ -39,6 +39,7 @@ class App extends React.Component {
   componentDidUpdate() {
     const { dogObj, loading } = this.state;
     if (dogObj && !loading) {
+      localStorage.setItem('lastPictureUrl', dogObj.message);
       const dogRace = dogObj.message.split('/');
       alert(dogRace[4]);
     };
